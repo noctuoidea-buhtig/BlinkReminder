@@ -30,7 +30,14 @@ public class ImageShapeWindow extends JFrame {
 		final Dimension imageSize=new Dimension(bi.getWidth(), bi.getHeight());
 
         setSize(imageSize);
-
+		
+		setFocusable(false);
+		setFocusableWindowState(false);
+		setAutoRequestFocus(false);
+		try{
+			setOpacity((float) 0.5);
+		}catch(java.lang.UnsupportedOperationException oue){}
+		
 		GeneralPath path;
 		if (debug) System.out.println("getting path");
 		try{
